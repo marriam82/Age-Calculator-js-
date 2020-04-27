@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <button class="btn-1" onclick="age()">Now Check Age</button>
+</body>
+<script>
+function age()
+{
+var month= [ 31, 28, 31, 30, 31, 30, 31,  
+                             31, 30, 31, 30, 31 ]; 
+var month1 =[1,2,3,4,5,6,7,8,9,10,11,12]
+  var date = new Date();
+
+ var current_date = Number(date.getDate()); 
+ var current_month = Number(month1[date.getMonth()]); 
+ var current_year = Number(date.getFullYear()); 
+  
+        // birth dd// mm// yyyy 
+        var birth_date = Number(prompt("Enter Birth date")); 
+        var birth_month = Number(prompt("Enter  Birth month")); 
+        var birth_year = Number(prompt("Enter  Birth year")); 
+
+if (birth_date > current_date) 
+{ 
+            current_month = current_month - 1; 
+            current_date = current_date + month[birth_month - 1]; 
+}
+if(birth_month=["january","feb","march","april","may","june","july","august","sep","oct","nov","dec"] > current_month){
+            current_year = current_year - 1; 
+            current_month = current_month + 12; 
+}
+// if (birth_month > current_month)
+//  { 
+//             current_year = current_year - 1; 
+//             current_month = current_month + 12; 
+//  } 
+ var  calculated_date = current_date - birth_date; 
+ var calculated_month = current_month - birth_month; 
+ var calculated_year = current_year - birth_year; 
+  alert(`Your spent Days ${calculated_date}\nYour Spent Months ${calculated_month}\nYour spent Years ${calculated_year}`)
+window.addEventListener("keydown", function(e)
+{
+  document.querySelector(".btn-1")
+})
+
+}
+</script>
+</html>
